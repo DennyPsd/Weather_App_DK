@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    app:cardBackgroundColor="#0CFFFFFF"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="0dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="55dp"
+        android:layout_height="wrap_content"
+        android:elevation="0dp">
+
+        <ImageView
+            android:id="@+id/tvImage"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="2dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_launcher_foreground" />
+
+        <TextView
+            android:id="@+id/tvTempMax"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="25℃"
+            android:textColor="#FFFFFF"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="@+id/tvDate"
+            app:layout_constraintHorizontal_bias="0.524"
+            app:layout_constraintStart_toStartOf="@+id/tvDate"
+            app:layout_constraintTop_toBottomOf="@+id/tvDate" />
+
+        <TextView
+            android:id="@+id/tvCurrTemp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="25℃"
+            android:textColor="#FFFFFF"
+            app:layout_constraintEnd_toEndOf="@+id/tvDate"
+            app:layout_constraintHorizontal_bias="0.524"
+            app:layout_constraintStart_toStartOf="@+id/tvDate"
+            app:layout_constraintTop_toBottomOf="@+id/tvDate" />
+
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="#FFFFFF"
+            app:layout_constraintEnd_toEndOf="@+id/tvImage"
+            app:layout_constraintStart_toStartOf="@+id/tvImage"
+            app:layout_constraintTop_toBottomOf="@+id/tvImage"
+            tools:text="Пн" />
+
+        <TextView
+            android:id="@+id/tvTempMin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="10℃"
+            android:textColor="#232323"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="@+id/tvTempMax"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/tvTempMax"
+            app:layout_constraintTop_toBottomOf="@+id/tvTempMax" />
+
+        <TextView
+            android:id="@+id/tvCondition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="30dp"
+            android:text="Солнечно"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/tvTempMax"
+            app:layout_constraintHorizontal_bias="0.555"
+            app:layout_constraintStart_toStartOf="@+id/tvTempMax"
+            app:layout_constraintTop_toBottomOf="@+id/tvTempMax" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
