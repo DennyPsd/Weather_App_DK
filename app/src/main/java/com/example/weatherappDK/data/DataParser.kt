@@ -13,16 +13,12 @@ object WeatherDataParser {
         val list = ArrayList<WeatherModel>()
         for (i in 0 until hoursArray.length()) {
             val item = WeatherModel(
-                city = "",
                 time = (hoursArray[i] as JSONObject).getString("time"),
                 condition = (hoursArray[i] as JSONObject).getJSONObject("condition")
                     .getString("text"),
                 currentTemp = (hoursArray[i] as JSONObject).getString("temp_c"),
-                maxTemp = "",
-                minTemp = "",
                 imageURL = (hoursArray[i] as JSONObject).getJSONObject("condition")
                     .getString("icon"),
-                hours = ""
             )
             list.add(item)
         }

@@ -3,4 +3,9 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="blackDots">#45000000</color>
+    <color name="GradientGreen">#B21A8905</color>
+    <color name="GradientBlue">#05475D</color>
+    <color name="GradientCenter">#055D59</color>
+    <color name="CardBackground">#0CFFFFFF</color>
+    <color name="TextColor">#232323</color>
 </resources>

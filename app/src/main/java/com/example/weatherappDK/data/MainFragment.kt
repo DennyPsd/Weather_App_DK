@@ -132,8 +132,6 @@ class MainFragment : Fragment() {
 
     //Тестовая функция получения даты
     private fun getData(): String{
-        var nowDay = ""
-        var nowMonth = ""
         val dayOfWeek = Calendar.getInstance().get(Calendar.DAY_OF_WEEK)
         val day = Calendar.getInstance().get(Calendar.DAY_OF_MONTH)
         val month = Calendar.getInstance().get(Calendar.MONTH)
@@ -141,29 +139,33 @@ class MainFragment : Fragment() {
         val hour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY)
         val min = Calendar.getInstance().get(Calendar.MINUTE)
 
-        when (dayOfWeek) {
-            1 -> nowDay = "Воскресенье"
-            2 -> nowDay = "Понедельник"
-            3 -> nowDay = "Вторник"
-            4 -> nowDay = "Среда"
-            5 -> nowDay = "Четверг"
-            6 -> nowDay = "Пятница"
-            7 -> nowDay = "Суббота"
+        val nowDay = when (dayOfWeek) {
+            1 -> "Воскресенье"
+            2 -> "Понедельник"
+            3 -> "Вторник"
+            4 -> "Среда"
+            5 -> "Четверг"
+            6 -> "Пятница"
+            7 -> "Суббота"
+            else -> ""
         }
-        when(month){
-            1 -> nowMonth = "Февраля"
-            2 -> nowMonth = "Марта"
-            3 -> nowMonth = "Апреля"
-            4 -> nowMonth = "Мая"
-            5 -> nowMonth = "Июня"
-            6 -> nowMonth = "Июля"
-            7 -> nowMonth = "Августа"
-            8 -> nowMonth = "Сентября"
-            9 -> nowMonth = "Октября"
-            10 -> nowMonth = "Ноября"
-            11 -> nowMonth = "Декабря"
-            12 -> nowMonth = "Января"
+
+        val nowMonth = when (month) {
+            1 -> "Февраля"
+            2 -> "Марта"
+            3 -> "Апреля"
+            4 -> "Мая"
+            5 -> "Июня"
+            6 -> "Июля"
+            7 -> "Августа"
+            8 -> "Сентября"
+            9 -> "Октября"
+            10 -> "Ноября"
+            11 -> "Декабря"
+            12 -> "Января"
+            else -> ""
         }
+
         return nowDay + ", " + day + " " + nowMonth
     }
 

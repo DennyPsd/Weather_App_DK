@@ -20,25 +20,22 @@ class WeatherHourlyAdapter : ListAdapter<WeatherModel, WeatherHourlyAdapter.Hold
             tvDate.text = item.time.split(" ")[1].replaceFirst("^0".toRegex(), "")
             tvCurrTemp.text = "${Math.round(item.currentTemp.toFloat())}" + "°"
             tvCondition.text = changeDeskr(item.condition)
-            Picasso.get().load("https:"+item.imageURL).into(tvImage)
+            Picasso.get().load("https:" + item.imageURL).into(tvImage)
         }
 
         //Функция перевода описания
-        private fun changeDeskr(deskr: String):String{
-            var nowDeskr = ""
-            when (deskr.trim().lowercase()){
-                "sunny" -> nowDeskr = "Солнечно"
-                "clear" -> nowDeskr = "Ясно"
-                "patchy rain nearby","light freezing rain" -> nowDeskr = "Местами дождь"
-                "clouds", "cloudy", "partly cloudy" -> nowDeskr = "Облачно"
-                "overcast" -> nowDeskr = "Пасмурно"
-                "snow", "heavy snow","moderate snow","light snow" -> nowDeskr = "Снег"
-
+        private fun changeDeskr(deskr: String) =
+            when (deskr.trim().lowercase()) {
+                "sunny" -> "Солнечно"
+                "clear" -> "Ясно"
+                "patchy rain nearby", "light freezing rain" -> "Местами дождь"
+                "clouds", "cloudy", "partly cloudy" -> "Облачно"
+                "overcast" -> "Пасмурно"
+                "snow", "heavy snow", "moderate snow", "light snow" -> "Снег"
+                else -> ""
             }
-            return nowDeskr
-        }
-
     }
+
 
     class Comparator : DiffUtil.ItemCallback<WeatherModel>() {
         override fun areItemsTheSame(oldItem: WeatherModel, newItem: WeatherModel): Boolean {
